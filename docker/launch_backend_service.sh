@@ -1,4 +1,6 @@
 #!/bin/bash
+# Activate RagFlow virtual environment
+source /var/www/ragflow/.venv/bin/activate
 
 # Exit immediately if a command exits with a non-zero status
 set -e
