@@ -52,7 +52,7 @@
 <details open>
 <summary><b>📕 Table of Contents</b></summary>
 
-- 💡 [What is RAGFlow?](#-what-is-ragflow)
+- 💡 [What is Quill?](#-what-is-quill)
 - 🎮 [Demo](#-demo)
 - 📌 [Latest Updates](#-latest-updates)
 - 🌟 [Key Features](#-key-features)
@@ -69,9 +69,9 @@
 
 </details>
 
-## 💡 What is RAGFlow?
+## 💡 What is Quill?
 
-[RAGFlow](https://ragflow.io/) is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs. It offers a streamlined RAG workflow adaptable to enterprises of any scale. Powered by a converged context engine and pre-built agent templates, RAGFlow enables developers to transform complex data into high-fidelity, production-ready AI systems with exceptional efficiency and precision.
+[Quill](https://ragflow.io/) is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs. It offers a streamlined RAG workflow adaptable to enterprises of any scale. Powered by a converged context engine and pre-built agent templates, Quill enables developers to transform complex data into high-fidelity, production-ready AI systems with exceptional efficiency and precision.
 
 ## 🎮 Demo
 
@@ -146,7 +146,7 @@ releases! 🌟
 - RAM >= 16 GB
 - Disk >= 50 GB
 - Docker >= 24.0.0 & Docker Compose >= v2.26.1
-- [gVisor](https://gvisor.dev/docs/user_guide/install/): Required only if you intend to use the code executor (sandbox) feature of RAGFlow.
+- [gVisor](https://gvisor.dev/docs/user_guide/install/): Required only if you intend to use the code executor (sandbox) feature of Quill.
 
 > [!TIP]
 > If you have not installed Docker on your local machine (Windows, Mac, or Linux), see [Install Docker Engine](https://docs.docker.com/engine/install/).
@@ -187,7 +187,7 @@ releases! 🌟
 > All Docker images are built for x86 platforms. We don't currently offer Docker images for ARM64.
 > If you are on an ARM64 platform, follow [this guide](https://ragflow.io/docs/dev/build_docker_image) to build a Docker image compatible with your system.
 
-   > The command below downloads the `v0.20.5-slim` edition of the RAGFlow Docker image. See the following table for descriptions of different RAGFlow editions. To download a RAGFlow edition different from `v0.20.5-slim`, update the `RAGFLOW_IMAGE` variable accordingly in **docker/.env** before using `docker compose` to start the server. For example: set `RAGFLOW_IMAGE=infiniflow/ragflow:v0.20.5` for the full edition `v0.20.5`.
+   > The command below downloads the `v0.20.5-slim` edition of the Quill Docker image. See the following table for descriptions of different Quill editions. To download a Quill edition different from `v0.20.5-slim`, update the `RAGFLOW_IMAGE` variable accordingly in **docker/.env** before using `docker compose` to start the server. For example: set `RAGFLOW_IMAGE=infiniflow/ragflow:v0.20.5` for the full edition `v0.20.5`.
 
    ```bash
    $ cd ragflow/docker
@@ -198,7 +198,7 @@ releases! 🌟
    # docker compose -f docker-compose-gpu.yml up -d
    ```
 
-   | RAGFlow image tag | Image size (GB) | Has embedding models? | Stable?                  |
+   | Quill image tag | Image size (GB) | Has embedding models? | Stable?                  |
    |-------------------|-----------------|-----------------------|--------------------------|
    | v0.20.5           | &approx;9       | :heavy_check_mark:    | Stable release           |
    | v0.20.5-slim      | &approx;2       | ❌                   | Stable release            |
@@ -224,10 +224,10 @@ releases! 🌟
     * Running on all addresses (0.0.0.0)
    ```
 
-   > If you skip this confirmation step and directly log in to RAGFlow, your browser may prompt a `network anormal`
-   > error because, at that moment, your RAGFlow may not be fully initialized.
+   > If you skip this confirmation step and directly log in to Quill, your browser may prompt a `network anormal`
+   > error because, at that moment, your Quill may not be fully initialized.
 
-5. In your web browser, enter the IP address of your server and log in to RAGFlow.
+5. In your web browser, enter the IP address of your server and log in to Quill.
    > With the default settings, you only need to enter `http://IP_OF_YOUR_MACHINE` (**sans** port number) as the default
    > HTTP serving port `80` can be omitted when using the default configurations.
 6. In [service_conf.yaml.template](./docker/service_conf.yaml.template), select the desired LLM factory in `user_default_llm` and update
@@ -260,7 +260,7 @@ Updates to the above configurations require a reboot of all containers to take e
 
 ### Switch doc engine from Elasticsearch to Infinity
 
-RAGFlow uses Elasticsearch by default for storing full text and vectors. To switch to [Infinity](https://github.com/infiniflow/infinity/), follow these steps:
+Quill uses Elasticsearch by default for storing full text and vectors. To switch to [Infinity](https://github.com/infiniflow/infinity/), follow these steps:
 
 1. Stop all running containers:
 
@@ -315,7 +315,7 @@ docker build --platform linux/amd64 -f Dockerfile -t infiniflow/ragflow:nightly 
    ```bash
    git clone https://github.com/infiniflow/ragflow.git
    cd ragflow/
-   uv sync --python 3.10 --all-extras # install RAGFlow dependent python modules
+   uv sync --python 3.10 --all-extras # install Quill dependent python modules
    uv run download_deps.py
    pre-commit install
    ```
@@ -376,7 +376,7 @@ docker build --platform linux/amd64 -f Dockerfile -t infiniflow/ragflow:nightly 
 
    ![](https://github.com/user-attachments/assets/0daf462c-a24d-4496-a66f-92533534e187)
 
-9. Stop RAGFlow front-end and back-end service after development is complete:
+9. Stop Quill front-end and back-end service after development is complete:
 
    ```bash
    pkill -f "ragflow_server.py|task_executor.py"
@@ -395,7 +395,7 @@ docker build --platform linux/amd64 -f Dockerfile -t infiniflow/ragflow:nightly 
 
 ## 📜 Roadmap
 
-See the [RAGFlow Roadmap 2025](https://github.com/infiniflow/ragflow/issues/4214)
+See the [Quill Roadmap 2025](https://github.com/infiniflow/ragflow/issues/4214)
 
 ## 🏄 Community
 
@@ -405,5 +405,5 @@ See the [RAGFlow Roadmap 2025](https://github.com/infiniflow/ragflow/issues/4214
 
 ## 🙌 Contributing
 
-RAGFlow flourishes via open-source collaboration. In this spirit, we embrace diverse contributions from the community.
+Quill flourishes via open-source collaboration. In this spirit, we embrace diverse contributions from the community.
 If you would like to be a part, review our [Contribution Guidelines](https://ragflow.io/docs/dev/contributing) first.

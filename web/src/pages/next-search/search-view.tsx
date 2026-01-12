@@ -89,7 +89,7 @@ export default function SearchingView({
             setIsSearching?.(false);
           }}
         >
-          RAGFlow
+          Quill
         </h1>
 
         <div

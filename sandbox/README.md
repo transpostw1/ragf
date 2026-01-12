@@ -1,10 +1,10 @@
-# RAGFlow Sandbox
+# Quill Sandbox
 
-A secure, pluggable code execution backend for RAGFlow and beyond.
+A secure, pluggable code execution backend for Quill and beyond.
 
 ## 🔧 Features
 
-- ✅ **Seamless RAGFlow Integration** — Out-of-the-box compatibility with the `code` component.
+- ✅ **Seamless Quill Integration** — Out-of-the-box compatibility with the `code` component.
 - 🔐 **High Security** — Leverages [gVisor](https://gvisor.dev/) for syscall-level sandboxing.
 - 🔧 **Customizable Sandboxing** — Easily modify `seccomp` settings as needed.
 - 🧩 **Pluggable Runtime Support** — Easily extend to support any programming language.
@@ -55,7 +55,7 @@ docker build -t sandbox-executor-manager:latest ./executor_manager
 
 ---
 
-### 📦 Running with RAGFlow
+### 📦 Running with Quill
 
 1. Ensure gVisor is correctly installed.
 2. Configure your `.env` in `docker/.env`:
@@ -68,7 +68,7 @@ docker build -t sandbox-executor-manager:latest ./executor_manager
    127.0.0.1 sandbox-executor-manager
    ```
 
-4. Start RAGFlow service.
+4. Start Quill service.
 
 ---
 
@@ -134,7 +134,7 @@ make logs                                 # With Make
 
 ## 🔐 Security
 
-The RAGFlow sandbox is designed to balance security and usability, offering solid protection without compromising developer experience.
+The Quill sandbox is designed to balance security and usability, offering solid protection without compromising developer experience.
 
 ### ✅ gVisor Isolation
 
@@ -292,9 +292,9 @@ Follow this checklist to troubleshoot:
   127.0.0.1 es01 infinity mysql minio redis sandbox-executor-manager
   ```
 
-- [ ] **Have you enabled sandbox-related configurations in RAGFlow?**
+- [ ] **Have you enabled sandbox-related configurations in Quill?**
 
-  Double-check that all sandbox settings are correctly enabled in your RAGFlow configuration.
+  Double-check that all sandbox settings are correctly enabled in your Quill configuration.
 
 - [ ] **Have you pulled the required base images for the runners?**
 
